@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteBase /
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9_-]+)/?$ /addscript/main.php?do=$1 [QSA,NC]
+# otherwise forward it to index.php
+# RewriteRule . /addscript/main.php
